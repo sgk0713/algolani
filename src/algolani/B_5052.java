@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class B_5052 {
+public class B_5052 {//전화번호 목록
 	public B_5052() {
 try {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

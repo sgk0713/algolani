@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class B_16934 {
+public class B_16934 {//게임 닉네임
 	public B_16934() {
 try {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
