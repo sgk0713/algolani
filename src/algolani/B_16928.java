@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class B_16928 {
+public class B_16928 {//뱀과 사다리 게임
 	int answer;
 	int teleport[];
 	boolean isChecked[] = new boolean[101];

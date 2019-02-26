@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class B_16920 {
+public class B_16920 {//확장 게임
 	int R, C, P;
 	char[][] map;
 	boolean[][] isChecked;

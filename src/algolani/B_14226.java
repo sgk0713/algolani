@@ -3,7 +3,7 @@ package algolani;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class B_14226 {
+public class B_14226 {//이모티콘
 	int N, answer = Integer.MAX_VALUE;
 	public B_14226() {
 try {

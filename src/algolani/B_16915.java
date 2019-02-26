@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class B_16915 {
+public class B_16915 {//호텔 관리
 	long rooms1;//1~50000
 	long rooms2;//50001~100000;
 	long buttons1;

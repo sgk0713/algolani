@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashSet;
 
-public class B_16922 {
+public class B_16922 {//로마숫자 만들기
 	public B_16922() {
 try {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

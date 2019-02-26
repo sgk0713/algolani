@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class B_2001 {
+public class B_2001 {//보석 줍기
 	int N, M, K, curJam, answer;
 	int[] islands;
 	int[][] weights;
