@@ -2,7 +2,6 @@ package algolani;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Random;
 import java.util.StringTokenizer;
 
 public class B_16434 {//드래곤 앤 던전
