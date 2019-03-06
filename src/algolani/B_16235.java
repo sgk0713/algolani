@@ -15,7 +15,8 @@ public class B_16235 {
 	PriorityQueue<Tree_16235> q = new PriorityQueue<>();
 	Queue<Tree_16235> deadTree = new LinkedList<>();
 	Queue<Tree_16235> makeOcta = new LinkedList<>();
-	public B_16235() {//39분
+	Queue<Tree_16235> nextYearTree = new LinkedList<>();
+	public B_16235() {
 try {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -36,11 +37,14 @@ try {
 			int r = Integer.parseInt(st.nextToken());
 			int c = Integer.parseInt(st.nextToken());
 			int age = Integer.parseInt(st.nextToken());
-			q.add(new Tree_16235(r, c, age, 0));
+			nextYearTree.add(new Tree_16235(r, c, age));
 		}
 		int year = 0;
-		while(true) {
+		while(!nextYearTree.isEmpty() && year<K) {
 			year++;
+			while(!nextYearTree.isEmpty()) {
+				q.offer(nextYearTree.poll());
+			}
 			int qSize = q.size();
 			//spring
 			for(int t = 0;t<qSize;t++) {
@@ -51,11 +55,10 @@ try {
 				if(map[r][c]>=age) {
 					map[r][c] -= age;
 					tree.age++;
-					tree.year = year;
 					if(tree.age%5==0) {
 						makeOcta.offer(tree);
 					}
-					q.offer(tree);
+					nextYearTree.offer(tree);
 				}else {
 					tree.age /= 2;
 					deadTree.offer(tree);
@@ -75,7 +78,7 @@ try {
 					int rr = r + dirR[i];
 					int cc = c + dirC[i];
 					if(isInBoundery(rr, cc)) {
-						q.offer(new Tree_16235(rr, cc, 1, year));
+						nextYearTree.offer(new Tree_16235(rr, cc, 1));
 					}
 				}
 			}
@@ -86,7 +89,7 @@ try {
 				break;
 			}
 		}
-		System.out.println(q.size());
+		System.out.println(nextYearTree.size());
 }catch (Exception e) {}
 	}
 	void addEnergy() {
@@ -104,18 +107,15 @@ try {
 		
 	}
 	class Tree_16235 implements Comparable<Tree_16235>{
-		int r, c, age, year;
-		public Tree_16235(int r, int c, int age, int year) {
+		int r, c, age;
+		public Tree_16235(int r, int c, int age) {
 			this.r = r;
 			this.c = c;
 			this.age = age;
-			this.year = year;
 		}
 		@Override
 		public int compareTo(Tree_16235 o) {
-			if(this.year>o.year) return 1;
-			else if(this.year < o.year) return -1;
-			else return this.age - o.age;
+			return this.age - o.age;
 		}
 	}
 }
