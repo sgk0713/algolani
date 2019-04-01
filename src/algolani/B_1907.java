@@ -43,26 +43,21 @@ try {
 			}
 			prev = cur;
 		}
-		int answer = 111;
-		while(!(compareType(C, answer) == 0
-			&& compareType(H, answer) == 0
-			&& compareType(O, answer) == 0)) {
-			System.out.println(answer);
-			answer++;
-			if((answer/10)%10 == 0){
-				answer+=10;
-			}
-			if((answer/1)%10 == 0){
-				answer+=1;
+		for(int i = 1;i<=10;i++) {
+			for(int j = 1;j<=10;j++) {
+				for(int k = 1;k<=10;k++) {
+					if(compareType(C, i,j,k) == 0
+						&& compareType(H, i,j,k) == 0
+						&& compareType(O, i,j,k) == 0) {
+						System.out.println(i+ " " + j + " " + k);
+						System.exit(0);
+					}
+				}
 			}
 		}
-		System.out.println((answer/100)%10 + " " + (answer/10)%10 + " " + (answer/1)%10);
 }catch (Exception e) {}
 	}
-	int compareType(int[] type, int answer) {
-		int m1 = (answer/100)%10;
-		int m2 = (answer/10)%10;
-		int m3 = (answer/1)%10;
+	int compareType(int[] type, int m1, int m2, int m3) {
 		return (type[0] * m1 + type[1] *m2) - (type[2] *m3);
 	}
 }

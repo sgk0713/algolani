@@ -1,21 +1,16 @@
 package algolani;
 
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.StringTokenizer;
-
-import javax.xml.soap.Node;
 
 public class B_3830 {
 	int N, M=1;
 	int mark, a, b, w;
 	int[][] sample;
+	int[] root = new int[1000000];
 	HashSet<Integer> history;
 	final int Q_MARK = '?';
 	final int E_MARK = '!';
@@ -52,7 +47,6 @@ try {
 						}
 					}
 					if(head == null) {
-						head.next = 
 					}
 				}else if(mark == Q_MARK){
 					a = Integer.parseInt(st.nextToken());
@@ -82,6 +76,13 @@ try {
 		}
 		
 }catch (Exception e) {e.printStackTrace();}
+	}
+	void Union(int a, int b) {
+		
+	}
+	int find(int a) {
+		if(root[a] < 0) return a;
+		return root[a] = find(root[a]);
 	}
 	class Node_3830{
 		int value, diff;
